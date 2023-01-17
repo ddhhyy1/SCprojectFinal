@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.studycafe.prac.dao.MemberDao">
+	
+	<!-- 회원 관리 SQL -->
+	<insert id="joinMember">
+		INSERT INTO scmemberTBL(userId, userPw, userName, userPhone, userEmail, userPoint,usingTicket,userNo)
+		VALUES(#{param1}, #{param2}, #{param3}, #{param4},#{param5},#{param6},#{param7},USER_seq.nextval)
+	</insert>
+	
+	<select id="checkUserId" resultType="int">
+		SELECT COUNT(*) FROM scmemberTBL WHERE userId=#{param1}
+	</select>
+	
+	<select id="checkUserIdAndPw" resultType="int">
+		SELECT COUNT(*) FROM scmemberTBL WHERE userId=#{param1} and userPw=#{param2}
+	</select>
+	
+	<select id="getMemberInfo" resultType="com.studycafe.prac.dto.memberDto">
+		SELECT * FROM scmemberTBL WHERE userId=#{param1}
+	</select>
+	
+	<update id="memberModify">
+		UPDATE scmemberTBL SET userPw=#{param2}, userName=#{param3}, userPhone=#{param4}, userEmail=#{param5}, userPoint=#{param6} WHERE userId=#{param1}
+	</update>
+	
+	<delete id="memberDelete">
+		DELETE FROM scmemberTBL WHERE userPw = #{param1, jdbcType=VARCHAR} 
+	</delete>
+	
+	<update id="updateUticketPoint">
+		UPDATE scmemberTBL SET userPoint=#{param2}, usingTicket=#{param3} WHERE userId=#{param1}
+	</update>
+	
+	<select id="memberAllCount" resultType="int">
+		SELECT COUNT(*) FROM scmemberTBL
+	</select>
+	
+	<select id="CheckId" resultType="com.studycafe.prac.dto.memberDto">
+		SELECT userId FROM scmemberTBL where userId = #{param1}
+	</select>
+	
+	<!-- 관리자 관련  -->
+	<select id="getAllMemberInfo" resultType="com.studycafe.prac.dto.memberDto">
+		SELECT * FROM
+			(SELECT A.*,Floor((ROWNUM-1)/#{amount}+1)PAGE,ROWNUM
+			FROM
+			(SELECT * FROM scmemberTBL ORDER BY userNo DESC)A) 
+		WHERE PAGE= #{pageNum}
+	</select>
+	
+	<delete id="admMemberKick">
+		DELETE FROM SCMEMBERTBL WHERE userID=#{param1} 
+	
+	</delete>
+	
+	<select id="getUserIdCount" resultType="int">
+		SELECT COUNT(*) FROM SCMEMBERTBL WHERE USERID = #{param1}
+	</select>
+	
+</mapper>

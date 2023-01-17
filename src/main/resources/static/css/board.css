@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+th.board_title{
+	background-color : #c9c9c9;
+	font-size : 20xp;
+	color: #2a2a2a;
+	font-family:malgun;
+	font-weight: bold;
+}
+
+td.board_content01{
+	background-color : #F8F4EA;
+	border-bottom:1px solid silver;
+	font-size : 20xp;
+	color: #3A3845;
+	font-family:malgun;
+	text-align:center;
+}
+
+td.board_content02{
+	background-color : #F8F4EA;
+	border-bottom:1px solid silver;
+	font-size : 20xp;
+	color: #000000;
+	font-family:malgun;
+	font-weight: bold;
+	text-align:left;
+}
+
+table.reply{
+
+	
+}
+
+td.reply2{
+	
+}
+
+tr.reply3{
+	background-color :#F2F3F5;
+	width:600px;
+}
+
+div.x{
+	background-color : #F2F3F5;
+  border-radius: 50px 50px 50px 50px;
+  width:400px;
+  
+}
+
+
+
