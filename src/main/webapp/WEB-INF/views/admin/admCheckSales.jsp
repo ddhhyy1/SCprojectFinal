@@ -51,7 +51,7 @@
         var ChartData = {            
             labels: [eleMonth.substr(0,8), tenMonth.substr(0,8), nineMonth.substr(0,8), eightMonth.substr(0,8), sevenMonth.substr(0,8), sixMonth.substr(0,8), fiveMonth.substr(0,8), fourMonth.substr(0,8), threeMonth.substr(0,8), twoMonth.substr(0,8), aMonth.substr(0,8), thisMonth.substr(0,8) ], // 챠트의 항목명 설정
             datasets: [{
-                label: '2022년 총 매출',  // 데이터셑의 이름
+                label: '2022년~2023년 1년간 총 매출',  // 데이터셑의 이름
                 pointRadius: 15, // 꼭지점의 원크기
                 pointHoverRadius: 30, // 꼭지점에 마우스 오버시 원크기                                   
                 backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(), // 챠트의 백그라운드 색상

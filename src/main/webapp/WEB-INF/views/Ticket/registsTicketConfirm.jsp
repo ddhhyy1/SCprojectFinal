@@ -60,7 +60,7 @@
     											</tr>
     											<tr>
       												<th scope="row"><span class="content_text01">이용시간 : </span>
-													<td><span class="content_text01">${ticketName}시간</span></td>
+													<td><span class="content_text01">${totalHour}시간</span></td>
     											</tr>
     											<tr>
       												<th scope="row"><span class="content_text01">지정한 시간대 : </span>

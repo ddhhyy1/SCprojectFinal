@@ -172,7 +172,19 @@ public class MemberController {
 				
 				model.addAttribute("uName", uName);
 				model.addAttribute("uId", userId);
-				System.out.println("성공!");
+				
+				
+				try {
+					response.setContentType("text/html; charset=UTF-8");      
+			        PrintWriter out;
+					out = response.getWriter();
+					out.println("<script>alert('가입을 축하합니다!');window.location.replace('index')</script>");
+				    out.flush();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} 
+				
 			}
 		}else {
 			
